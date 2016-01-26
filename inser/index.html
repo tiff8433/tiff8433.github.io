@@ -1,0 +1,175 @@
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <title>Insertion Sort</title>
+    <meta name="description" content="">
+
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  	<!--
+  	<meta name="twitter:card" value="summary">
+  	<meta name="twitter:site" content="@site-handle">
+  	<meta name="twitter:title" content="Insertion Sort">
+  	<meta name="twitter:description" content="">
+  	<meta name="twitter:creator" content="@author-handle">
+  	<meta name="twitter:image" content="http://yoursite.com/featured-image.png">
+    -->
+  	<!--
+  	<meta property="og:title" content="Insertion Sort" />
+  	<meta property="og:type" content="article" />
+  	<meta property="og:url" content="http://localhost:2368/inser/" />
+  	<meta property="og:description" content="" />
+  	<meta property="og:image" content="http://yoursite.com/featured-image.png" />
+  	<meta property="og:site_name" content="Site Name" />
+  	<meta property="fb:admins" content="Facebook numeric ID" />
+    -->
+    <link rel="stylesheet" type="text/css" href="../assets/css/style.css?v=ad0c28a1ea">
+
+    <link rel="canonical" href="http://localhost:2368/inser/">
+    <meta name="referrer" content="origin">
+    
+    <meta property="og:site_name" content="Code Red">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Insertion Sort">
+    <meta property="og:description" content="There are many types of sorting algorithms, which vary by time complexity, space complexity and efficiency. The insertion sort method is quite popular, easy to implement, and is how most people manually sort cards. Insertion sort splits the array into...">
+    <meta property="og:url" content="http://localhost:2368/inser/">
+    <meta property="article:published_time" content="2016-01-26T04:29:07.033Z">
+    <meta property="article:modified_time" content="2016-01-26T04:29:07.031Z">
+    
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Insertion Sort">
+    <meta name="twitter:description" content="There are many types of sorting algorithms, which vary by time complexity, space complexity and efficiency. The insertion sort method is quite popular, easy to implement, and is how most people manually sort cards. Insertion sort splits the array into...">
+    <meta name="twitter:url" content="http://localhost:2368/inser/">
+    
+    <script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "publisher": "Code Red",
+    "author": {
+        "@type": "Person",
+        "name": "Tiffany Huang",
+        "url": "http://localhost:2368/author/tiffany",
+        "sameAs": null,
+        "description": null
+    },
+    "headline": "Insertion Sort",
+    "url": "http://localhost:2368/inser/",
+    "datePublished": "2016-01-26T04:29:07.033Z",
+    "dateModified": "2016-01-26T04:29:07.031Z",
+    "description": "There are many types of sorting algorithms, which vary by time complexity, space complexity and efficiency. The insertion sort method is quite popular, easy to implement, and is how most people manually sort cards. Insertion sort splits the array into..."
+}
+    </script>
+
+    <meta name="generator" content="Ghost 0.7">
+    <link rel="alternate" type="application/rss+xml" title="Code Red" href="http://localhost:2368/rss/">
+</head>
+<body class="post-template">
+
+	
+
+<header id="site-head" style="background-image: url(../content/images/2016/01/sunset.jpg)">
+  <div id="site-head-content" class="inner">
+    
+    <h1 class="blog-title"><a href="../">Code Red</a></h1>
+    <h2 class="blog-description"></h2>
+    <p class="social-links">
+	<a href="http://instagram.com/username"><i class="fa fa-instagram"></i></a>
+	<a href="https://twitter.com/username"><i class="fa fa-twitter"></i></a>
+	<a href="https://github.com/username"><i class="fa fa-github"></i></a>
+	<a href="https://alpha.app.net/username"><i class="fa fa-adn"></i></a>
+	<a href="https://google.com/+username?rel=author"><i class="fa fa-google-plus"></i></a>
+	<a href="http://localhost:2368/rss/"><i class="fa fa-rss"></i></a>
+</p>  </div>
+</header>
+
+<main class="content" role="main">
+  <article class="post">
+      <h1 class="post-title">Insertion Sort</h1>
+      <span class="post-meta"><i class="fa fa-calendar"></i> <time datetime="2016-01-25">25 Jan 2016</time></span>
+      <section class="post-content">
+        <p>There are many types of sorting algorithms, which vary by time complexity, space complexity and efficiency. The insertion sort method is quite popular, easy to implement, and is how most people manually sort cards.</p>
+
+<p>Insertion sort splits the array into sorted and unsorted. You will have to iterate through the array to move the beginning of the sorted section and then iterate through that sorted section to find the correct spot for the current element.</p>
+
+<p><code>var array = [3,8,2,6,1];</code><br>
+[3, &lt;-sorted | unsorted-&gt; <strong>8</strong>,2,6,1]<br>
+[3,<strong>8</strong>, &lt;-sorted | unsorted-&gt; 2,6,1]<br>
+<em>The first element to sort will be at array[1], the first element of the unsorted section of the array. We take the value at array[1] and compare it to all elements of the sorted array. If the element is smaller, then the two numbers are swapped.</em> <br></p>
+
+<p>[3,8, &lt;-sorted | unsorted-&gt; <strong>2</strong>,6,1]<br>
+[3,8,<strong>2</strong>, &lt;-sorted | unsorted-&gt; 6,1]<br>
+[3,<strong>2</strong>,8, &lt;-sorted | unsorted-&gt; 6,1]<br>
+[<strong>2</strong>,3,8, &lt;-sorted | unsorted-&gt; 6,1]<br>
+<em>Now the first element of the unsorted array, array[2], will be compared with the elements in the unsorted array and placed in it's proper position. 2 is compared with 8 and swapped, then 2 is compared with 3 and swapped.</em><br></p>
+
+<p>[2,3,8, &lt;-sorted | unsorted-&gt; <strong>6</strong>,1]<br>
+[2,3,8,<strong>6</strong>, &lt;-sorted | unsorted-&gt; 1]<br>
+[2,3,<strong>6</strong>,8, &lt;-sorted | unsorted-&gt; 1]<br>
+<em>This pattern continues until all elements have been sorted.</em><br></p>
+
+<p>[2,3,6,8, &lt;-sorted | unsorted-&gt; <strong>1</strong>]<br>
+[2,3,6,8,<strong>1</strong> &lt;-sorted | unsorted-&gt; ]<br>
+[2,3,6,<strong>1</strong>,8 &lt;-sorted | unsorted-&gt; ]<br>
+[2,3,<strong>1</strong>,6,8 &lt;-sorted | unsorted-&gt; ]<br>
+[2,<strong>1</strong>,3,6,8 &lt;-sorted | unsorted-&gt; ]<br>
+[<strong>1</strong>,2,3,6,8 &lt;-sorted | unsorted-&gt; ]<br></p>
+
+<p>And we are left with our final result. <br>
+[1,2,3,6,8]</p>
+
+<p>Pros: simple implementation, efficient for small data sets, constant space complexity as it sorts in place</p>
+
+<p>Cons: impractical for sorting large arrays because its average time complexity is quadratic</p>
+      </section>
+          <section class="author">
+            <h5>by <a href="../author/tiffany/">Tiffany Huang</a></h5>
+            <p></p>
+          </section>
+      <section class="post-navigation">
+        <div class="previous-post">
+          « <a href="../eax/">Examples of slice</a>
+        </div>
+      </section>
+      <footer class="post-footer">
+        <section class="share">
+          <h4>Share this post</h4>
+          <a href="http://twitter.com/share?text=Insertion%20Sort&amp;url=http://localhost:2368/inser/" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+            <i class="fa fa-twitter"></i>
+          </a>
+          <a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:2368/inser/" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+            <i class="fa fa-facebook"></i>
+          </a>
+          <a href="https://plus.google.com/share?url=http://localhost:2368/inser/" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+            <i class="fa fa-google-plus"></i>
+          </a>
+        </section>
+        <section class="save-for-later">
+          <h4>Or read it later, using</h4>
+          <a href="http://www.instapaper.com/hello2?url=http://localhost:2368/inser/&amp;title=Insertion%20Sort">Instapaper</a>
+        </section>
+        <section class="go-back">
+          <h4>Or just</h4>
+          <a href="../">go back to the index page</a>
+        </section>
+      </footer>
+  </article>
+</main>
+
+
+	<footer class="site-footer">
+	    <div class="inner">
+	         <section class="copyright">All content copyright <a href="../">Code Red</a> © 2016 • All rights reserved.</section>
+	         <section class="poweredby">Proudly published from Slussfors, Lapland, Sweden with <a href="http://ghost.org/">Ghost</a> on <a href="http://digitalocean.com/">Digital Ocean</a>.</section>
+	    	 <section class="theme">Using the <a href="https://github.com/lacke/Orre-Theme-for-Ghost" class="github"><span class="tooltip">Get it on GitHub!</span>Orre theme</a> by <a href="http://laketa.com/">Stefan Laketa</a>.</section>
+		</div>
+	</footer>
+
+    
+
+    <script type="text/javascript" src="../assets/js/index.js"></script>
+</body>

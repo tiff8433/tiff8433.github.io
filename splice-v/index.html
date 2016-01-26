@@ -1,0 +1,168 @@
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <title>Splice vs Slice</title>
+    <meta name="description" content="">
+
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  	<!--
+  	<meta name="twitter:card" value="summary">
+  	<meta name="twitter:site" content="@site-handle">
+  	<meta name="twitter:title" content="Splice vs Slice">
+  	<meta name="twitter:description" content="">
+  	<meta name="twitter:creator" content="@author-handle">
+  	<meta name="twitter:image" content="http://yoursite.com/featured-image.png">
+    -->
+  	<!--
+  	<meta property="og:title" content="Splice vs Slice" />
+  	<meta property="og:type" content="article" />
+  	<meta property="og:url" content="http://localhost:2368/splice-v/" />
+  	<meta property="og:description" content="" />
+  	<meta property="og:image" content="http://yoursite.com/featured-image.png" />
+  	<meta property="og:site_name" content="Site Name" />
+  	<meta property="fb:admins" content="Facebook numeric ID" />
+    -->
+    <link rel="stylesheet" type="text/css" href="../assets/css/style.css?v=ad0c28a1ea">
+
+    <link rel="canonical" href="http://localhost:2368/splice-v/">
+    <meta name="referrer" content="origin">
+    
+    <meta property="og:site_name" content="Code Red">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Splice vs Slice">
+    <meta property="og:description" content="Remembering when to use the slice() vs splice() can be confusing, probably because they are both array methods and they sound so much alike. There are some key differences: What is returned:  slice: returns a new array with selected elements...">
+    <meta property="og:url" content="http://localhost:2368/splice-v/">
+    <meta property="article:published_time" content="2016-01-26T04:27:35.356Z">
+    <meta property="article:modified_time" content="2016-01-26T04:27:35.353Z">
+    
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Splice vs Slice">
+    <meta name="twitter:description" content="Remembering when to use the slice() vs splice() can be confusing, probably because they are both array methods and they sound so much alike. There are some key differences: What is returned:  slice: returns a new array with selected elements...">
+    <meta name="twitter:url" content="http://localhost:2368/splice-v/">
+    
+    <script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "publisher": "Code Red",
+    "author": {
+        "@type": "Person",
+        "name": "Tiffany Huang",
+        "url": "http://localhost:2368/author/tiffany",
+        "sameAs": null,
+        "description": null
+    },
+    "headline": "Splice vs Slice",
+    "url": "http://localhost:2368/splice-v/",
+    "datePublished": "2016-01-26T04:27:35.356Z",
+    "dateModified": "2016-01-26T04:27:35.353Z",
+    "description": "Remembering when to use the slice() vs splice() can be confusing, probably because they are both array methods and they sound so much alike. There are some key differences: What is returned:  slice: returns a new array with selected elements..."
+}
+    </script>
+
+    <meta name="generator" content="Ghost 0.7">
+    <link rel="alternate" type="application/rss+xml" title="Code Red" href="http://localhost:2368/rss/">
+</head>
+<body class="post-template">
+
+	
+
+<header id="site-head" style="background-image: url(../content/images/2016/01/sunset.jpg)">
+  <div id="site-head-content" class="inner">
+    
+    <h1 class="blog-title"><a href="../">Code Red</a></h1>
+    <h2 class="blog-description"></h2>
+    <p class="social-links">
+	<a href="http://instagram.com/username"><i class="fa fa-instagram"></i></a>
+	<a href="https://twitter.com/username"><i class="fa fa-twitter"></i></a>
+	<a href="https://github.com/username"><i class="fa fa-github"></i></a>
+	<a href="https://alpha.app.net/username"><i class="fa fa-adn"></i></a>
+	<a href="https://google.com/+username?rel=author"><i class="fa fa-google-plus"></i></a>
+	<a href="http://localhost:2368/rss/"><i class="fa fa-rss"></i></a>
+</p>  </div>
+</header>
+
+<main class="content" role="main">
+  <article class="post">
+      <h1 class="post-title">Splice vs Slice</h1>
+      <span class="post-meta"><i class="fa fa-calendar"></i> <time datetime="2016-01-25">25 Jan 2016</time></span>
+      <section class="post-content">
+        <p>Remembering when to use the <code>slice()</code> vs <code>splice()</code> can be confusing, probably because they are both array methods and they sound so much alike. There are some key differences:</p>
+
+<ol>
+<li>What is returned: <br>
+<ul><li><strong>slice: </strong>returns a <em>new</em> array with selected elements</li>
+<li><strong>splice: </strong>adds or removes elements from an array and returns those removed elements</li></ul></li>
+<li>Mutates original array: <br>
+<ul><li><strong>slice: </strong>No. Slice creates a new array with the returned elements. The original array remains intact.</li>
+<li><strong>splice: </strong>Yes. Splice will change the original array.</li></ul></li>
+<li>Arguments: <br>
+<ul><li><strong>slice: </strong>There are 2 arguments, as you can see here: <code>array.slice(start, end)</code>
+<ul><li>'start' is a required integer that indicates the index where you'd like to begin the copy</li>
+<li>'end' is an optional integer that indicates the end of a selection.</li></ul></li>
+<li><strong>splice: </strong> There are 2 required arguments for splice and optional additional parameters: <code>array.splice(start, howMany, option1, option2, option3...)</code>
+<ul><li>'start' indicates which index to ad or remove items</li>
+<li>'howMany' determines how many items to remove. It is given a value of 0 if you want to select to the end of the array</li>
+<li>optional additional items can be included in the arguments as elements to be added into the array</li></ul></li></ul></li>
+<li>Negative Integers: <br>
+<ul><li><strong>slice: </strong>Use a negative integer as a parameter to select from the end of the array</li>
+<li><strong>splice: </strong>If the start index is a negative number, it will specify the position from the end of the array.</li></ul></li>
+</ol>
+
+<p>I have listed the main differences between two widely used array methods. In a future post, we will go through some examples.</p>
+      </section>
+          <section class="author">
+            <h5>by <a href="../author/tiffany/">Tiffany Huang</a></h5>
+            <p></p>
+          </section>
+      <section class="post-navigation">
+        <div class="previous-post">
+          « <a href="../bookmarks/">Bookmarks</a>
+        </div>
+        <div class="next-post">
+          <a href="../examples/">Examples of splice</a> »
+        </div>
+      </section>
+      <footer class="post-footer">
+        <section class="share">
+          <h4>Share this post</h4>
+          <a href="http://twitter.com/share?text=Splice%20vs%20Slice&amp;url=http://localhost:2368/splice-v/" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+            <i class="fa fa-twitter"></i>
+          </a>
+          <a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:2368/splice-v/" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+            <i class="fa fa-facebook"></i>
+          </a>
+          <a href="https://plus.google.com/share?url=http://localhost:2368/splice-v/" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+            <i class="fa fa-google-plus"></i>
+          </a>
+        </section>
+        <section class="save-for-later">
+          <h4>Or read it later, using</h4>
+          <a href="http://www.instapaper.com/hello2?url=http://localhost:2368/splice-v/&amp;title=Splice%20vs%20Slice">Instapaper</a>
+        </section>
+        <section class="go-back">
+          <h4>Or just</h4>
+          <a href="../">go back to the index page</a>
+        </section>
+      </footer>
+  </article>
+</main>
+
+
+	<footer class="site-footer">
+	    <div class="inner">
+	         <section class="copyright">All content copyright <a href="../">Code Red</a> © 2016 • All rights reserved.</section>
+	         <section class="poweredby">Proudly published from Slussfors, Lapland, Sweden with <a href="http://ghost.org/">Ghost</a> on <a href="http://digitalocean.com/">Digital Ocean</a>.</section>
+	    	 <section class="theme">Using the <a href="https://github.com/lacke/Orre-Theme-for-Ghost" class="github"><span class="tooltip">Get it on GitHub!</span>Orre theme</a> by <a href="http://laketa.com/">Stefan Laketa</a>.</section>
+		</div>
+	</footer>
+
+    
+
+    <script type="text/javascript" src="../assets/js/index.js"></script>
+</body>

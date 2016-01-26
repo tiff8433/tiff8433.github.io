@@ -1,0 +1,180 @@
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <title>Examples of slice</title>
+    <meta name="description" content="">
+
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  	<!--
+  	<meta name="twitter:card" value="summary">
+  	<meta name="twitter:site" content="@site-handle">
+  	<meta name="twitter:title" content="Examples of slice">
+  	<meta name="twitter:description" content="">
+  	<meta name="twitter:creator" content="@author-handle">
+  	<meta name="twitter:image" content="http://yoursite.com/featured-image.png">
+    -->
+  	<!--
+  	<meta property="og:title" content="Examples of slice" />
+  	<meta property="og:type" content="article" />
+  	<meta property="og:url" content="http://localhost:2368/eax/" />
+  	<meta property="og:description" content="" />
+  	<meta property="og:image" content="http://yoursite.com/featured-image.png" />
+  	<meta property="og:site_name" content="Site Name" />
+  	<meta property="fb:admins" content="Facebook numeric ID" />
+    -->
+    <link rel="stylesheet" type="text/css" href="../assets/css/style.css?v=ad0c28a1ea">
+
+    <link rel="canonical" href="http://localhost:2368/eax/">
+    <meta name="referrer" content="origin">
+    
+    <meta property="og:site_name" content="Code Red">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Examples of slice">
+    <meta property="og:description" content="The following are some examples that helped me to better understand slice. Remember that slice makes a copy of the original array, so the original array is not mutated. The parameters are as follows:  array.slice(startIndex, endIndex) // Given an...">
+    <meta property="og:url" content="http://localhost:2368/eax/">
+    <meta property="article:published_time" content="2016-01-26T04:28:50.376Z">
+    <meta property="article:modified_time" content="2016-01-26T04:28:50.375Z">
+    
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Examples of slice">
+    <meta name="twitter:description" content="The following are some examples that helped me to better understand slice. Remember that slice makes a copy of the original array, so the original array is not mutated. The parameters are as follows:  array.slice(startIndex, endIndex) // Given an...">
+    <meta name="twitter:url" content="http://localhost:2368/eax/">
+    
+    <script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "publisher": "Code Red",
+    "author": {
+        "@type": "Person",
+        "name": "Tiffany Huang",
+        "url": "http://localhost:2368/author/tiffany",
+        "sameAs": null,
+        "description": null
+    },
+    "headline": "Examples of slice",
+    "url": "http://localhost:2368/eax/",
+    "datePublished": "2016-01-26T04:28:50.376Z",
+    "dateModified": "2016-01-26T04:28:50.375Z",
+    "description": "The following are some examples that helped me to better understand slice. Remember that slice makes a copy of the original array, so the original array is not mutated. The parameters are as follows:  array.slice(startIndex, endIndex) // Given an..."
+}
+    </script>
+
+    <meta name="generator" content="Ghost 0.7">
+    <link rel="alternate" type="application/rss+xml" title="Code Red" href="http://localhost:2368/rss/">
+</head>
+<body class="post-template">
+
+	
+
+<header id="site-head" style="background-image: url(../content/images/2016/01/sunset.jpg)">
+  <div id="site-head-content" class="inner">
+    
+    <h1 class="blog-title"><a href="../">Code Red</a></h1>
+    <h2 class="blog-description"></h2>
+    <p class="social-links">
+	<a href="http://instagram.com/username"><i class="fa fa-instagram"></i></a>
+	<a href="https://twitter.com/username"><i class="fa fa-twitter"></i></a>
+	<a href="https://github.com/username"><i class="fa fa-github"></i></a>
+	<a href="https://alpha.app.net/username"><i class="fa fa-adn"></i></a>
+	<a href="https://google.com/+username?rel=author"><i class="fa fa-google-plus"></i></a>
+	<a href="http://localhost:2368/rss/"><i class="fa fa-rss"></i></a>
+</p>  </div>
+</header>
+
+<main class="content" role="main">
+  <article class="post">
+      <h1 class="post-title">Examples of slice</h1>
+      <span class="post-meta"><i class="fa fa-calendar"></i> <time datetime="2016-01-25">25 Jan 2016</time></span>
+      <section class="post-content">
+        <p>The following are some examples that helped me to better understand slice. Remember that slice makes a copy of the original array, so the original array is not mutated.</p>
+
+<p>The parameters are as follows: <br>
+<code>array.slice(startIndex, endIndex)</code></p>
+
+<pre><code>// Given an array of integers from 0 to 5
+&gt; var arr = [0, 1, 2, 3, 4, 5]
+// Without the optional second parameter, a copy of an array is returned with the given index until the end of the array
+&gt; arr.slice(1) // [1, 2, 3, 4, 5]
+// Again, the original array remains the same
+&gt; arr // [0, 1, 2, 3, 4, 5]
+// If you include a second argument, it will slice from the first argument's index to the second argument up to but not including the element at that index
+&gt; arr.slice(1, 3) // [1, 2]
+&gt; arr // [0, 1, 2, 3, 4, 5]
+// Using a negative number as an integer will return the number of items from the end of the array
+&gt; arr.slice(-1) // [5]
+&gt; arr // [0, 1, 2, 3, 4, 5]
+&gt; arr.slice(-3) // [3, 4, 5]
+&gt; arr // [0, 1, 2, 3, 4, 5] 
+</code></pre>
+
+<p>When writing functions, there is a way to use slice that is very useful. <br>
+<code>Array.prototype.slice.call()</code></p>
+
+<p>When writing a function, arguments can be iterated over similar to an array and have a length property but are not considered and array, rather an array-like object. As you can see in the example below, we use <code>Array.prototype.slice.call(arguments)</code> to create an array of the arguments. Now you can use the native array methods that would otherwise not have been available on the array-like arguments.  </p>
+
+<pre><code>var example = function() {  
+  var argumentsArray = Array.prototype.slice.call(arguments);
+  console.log(argumentsArray);
+  return argumentsArray.pop();
+}
+
+&gt; example(1, 2, 3) // [1, 2, 3]
+&lt; 3  
+</code></pre>
+      </section>
+          <section class="author">
+            <h5>by <a href="../author/tiffany/">Tiffany Huang</a></h5>
+            <p></p>
+          </section>
+      <section class="post-navigation">
+        <div class="previous-post">
+          « <a href="../examples/">Examples of splice</a>
+        </div>
+        <div class="next-post">
+          <a href="../inser/">Insertion Sort</a> »
+        </div>
+      </section>
+      <footer class="post-footer">
+        <section class="share">
+          <h4>Share this post</h4>
+          <a href="http://twitter.com/share?text=Examples%20of%20slice&amp;url=http://localhost:2368/eax/" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+            <i class="fa fa-twitter"></i>
+          </a>
+          <a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:2368/eax/" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+            <i class="fa fa-facebook"></i>
+          </a>
+          <a href="https://plus.google.com/share?url=http://localhost:2368/eax/" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+            <i class="fa fa-google-plus"></i>
+          </a>
+        </section>
+        <section class="save-for-later">
+          <h4>Or read it later, using</h4>
+          <a href="http://www.instapaper.com/hello2?url=http://localhost:2368/eax/&amp;title=Examples%20of%20slice">Instapaper</a>
+        </section>
+        <section class="go-back">
+          <h4>Or just</h4>
+          <a href="../">go back to the index page</a>
+        </section>
+      </footer>
+  </article>
+</main>
+
+
+	<footer class="site-footer">
+	    <div class="inner">
+	         <section class="copyright">All content copyright <a href="../">Code Red</a> © 2016 • All rights reserved.</section>
+	         <section class="poweredby">Proudly published from Slussfors, Lapland, Sweden with <a href="http://ghost.org/">Ghost</a> on <a href="http://digitalocean.com/">Digital Ocean</a>.</section>
+	    	 <section class="theme">Using the <a href="https://github.com/lacke/Orre-Theme-for-Ghost" class="github"><span class="tooltip">Get it on GitHub!</span>Orre theme</a> by <a href="http://laketa.com/">Stefan Laketa</a>.</section>
+		</div>
+	</footer>
+
+    
+
+    <script type="text/javascript" src="../assets/js/index.js"></script>
+</body>
