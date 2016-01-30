@@ -1,0 +1,267 @@
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" version="2.0"><channel><title>Code Red</title><description>Code Red</description><link>http://localhost:2368/</link><generator>Ghost 0.7</generator><lastBuildDate>Sat, 30 Jan 2016 20:41:52 GMT</lastBuildDate><atom:link href="http://localhost:2368/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title>Updating Ghost Blog Hosted on Github Pages</title><description>&lt;p&gt;This post will describe the workflow need to write a blogpost in the ghost editor and deploy to github pages so that it is viewable at &lt;a href="http://yourgithubusername.github.io"&gt;http://yourgithubusername.github.io&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;If you need help getting Github Pages to serve your Ghost blog, the following links, that utilize buster, are helpful:&lt;/p&gt;</description><link>http://localhost:2368/updating-ghost-blog-hosted-on-github-pages/</link><guid isPermaLink="false">4471bcba-a1ba-4d0b-ad5b-4e4d7c6db9ef</guid><dc:creator>Tiffany Huang</dc:creator><pubDate>Sat, 30 Jan 2016 20:30:20 GMT</pubDate><content:encoded>&lt;p&gt;This post will describe the workflow need to write a blogpost in the ghost editor and deploy to github pages so that it is viewable at &lt;a href="http://yourgithubusername.github.io"&gt;http://yourgithubusername.github.io&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;If you need help getting Github Pages to serve your Ghost blog, the following links, that utilize buster, are helpful: &lt;br&gt;
+1. &lt;a href="http://ledtechnica.com/free-ghost-hosting-on-github-pages/"&gt;http://ledtechnica.com/free-ghost-hosting-on-github-pages/&lt;/a&gt; &lt;br&gt;
+2. &lt;a href="http://briank.im/i-see-ghosts/"&gt;http://briank.im/i-see-ghosts/&lt;/a&gt; &lt;br&gt;
+3. &lt;a href="http://blog.sunnyg.io/2015/09/24/ghost-with-github/"&gt;http://blog.sunnyg.io/2015/09/24/ghost-with-github/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Now that you have your ghost-github-buster blog set up with, how do you create and deploy a new post?&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;open your terminal and cd into your ghost folder  &lt;/li&gt;
+&lt;li&gt;&lt;code&gt;npm start&lt;/code&gt; to start the server  &lt;/li&gt;
+&lt;li&gt;open you browser and go to &lt;code&gt;localhost:&amp;lt;port number&amp;gt;/ghost&lt;/code&gt;  &lt;/li&gt;
+&lt;li&gt;sign in, if prompted  &lt;/li&gt;
+&lt;li&gt;the ghost editor should open up, click on 'New Post'  &lt;/li&gt;
+&lt;li&gt;start writing  &lt;/li&gt;
+&lt;li&gt;when you are finished, go to the 'SAVE DRAFT' dropdown menu and click on 'Publish Now'  &lt;/li&gt;
+&lt;li&gt;cd into your ghost folder that &lt;em&gt;contains&lt;/em&gt; the 'static' folder, not into the 'static' folder  &lt;/li&gt;
+&lt;li&gt;type &lt;code&gt;buster deploy&lt;/code&gt; and your pages will be added, committed and pushed to github  &lt;/li&gt;
+&lt;li&gt;your blog should be updated shortly&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Until you have gone through the workflow a couple of times, it may not be very intuitive on how to update your post. Hopefully the above steps will be a quick reminder, until it becomes second nature.&lt;/p&gt;</content:encoded></item><item><title>Insertion Sort</title><description>&lt;p&gt;There are many types of sorting algorithms, which vary by time complexity, space complexity and efficiency. The insertion sort method is quite popular, easy to implement, and is how most people manually sort cards.&lt;/p&gt;
+
+&lt;p&gt;Insertion sort splits the array into sorted and unsorted. You will have to iterate through the&lt;/p&gt;</description><link>http://localhost:2368/inser/</link><guid isPermaLink="false">dc574fd6-ba08-4f2d-9a65-3000566bf66e</guid><dc:creator>Tiffany Huang</dc:creator><pubDate>Tue, 26 Jan 2016 04:29:07 GMT</pubDate><content:encoded>&lt;p&gt;There are many types of sorting algorithms, which vary by time complexity, space complexity and efficiency. The insertion sort method is quite popular, easy to implement, and is how most people manually sort cards.&lt;/p&gt;
+
+&lt;p&gt;Insertion sort splits the array into sorted and unsorted. You will have to iterate through the array to move the beginning of the sorted section and then iterate through that sorted section to find the correct spot for the current element.&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;var array = [3,8,2,6,1];&lt;/code&gt;&lt;br&gt;
+[3, &amp;lt;-sorted | unsorted-&gt; &lt;strong&gt;8&lt;/strong&gt;,2,6,1]&lt;br&gt;
+[3,&lt;strong&gt;8&lt;/strong&gt;, &amp;lt;-sorted | unsorted-&gt; 2,6,1]&lt;br&gt;
+&lt;em&gt;The first element to sort will be at array[1], the first element of the unsorted section of the array. We take the value at array[1] and compare it to all elements of the sorted array. If the element is smaller, then the two numbers are swapped.&lt;/em&gt; &lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;[3,8, &amp;lt;-sorted | unsorted-&gt; &lt;strong&gt;2&lt;/strong&gt;,6,1]&lt;br&gt;
+[3,8,&lt;strong&gt;2&lt;/strong&gt;, &amp;lt;-sorted | unsorted-&gt; 6,1]&lt;br&gt;
+[3,&lt;strong&gt;2&lt;/strong&gt;,8, &amp;lt;-sorted | unsorted-&gt; 6,1]&lt;br&gt;
+[&lt;strong&gt;2&lt;/strong&gt;,3,8, &amp;lt;-sorted | unsorted-&gt; 6,1]&lt;br&gt;
+&lt;em&gt;Now the first element of the unsorted array, array[2], will be compared with the elements in the sorted array and placed in it's proper position. 2 is compared with 8 and swapped, then 2 is compared with 3 and swapped.&lt;/em&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;[2,3,8, &amp;lt;-sorted | unsorted-&gt; &lt;strong&gt;6&lt;/strong&gt;,1]&lt;br&gt;
+[2,3,8,&lt;strong&gt;6&lt;/strong&gt;, &amp;lt;-sorted | unsorted-&gt; 1]&lt;br&gt;
+[2,3,&lt;strong&gt;6&lt;/strong&gt;,8, &amp;lt;-sorted | unsorted-&gt; 1]&lt;br&gt;
+&lt;em&gt;This pattern continues until all elements have been sorted.&lt;/em&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;[2,3,6,8, &amp;lt;-sorted | unsorted-&gt; &lt;strong&gt;1&lt;/strong&gt;]&lt;br&gt;
+[2,3,6,8,&lt;strong&gt;1&lt;/strong&gt; &amp;lt;-sorted | unsorted-&gt; ]&lt;br&gt;
+[2,3,6,&lt;strong&gt;1&lt;/strong&gt;,8 &amp;lt;-sorted | unsorted-&gt; ]&lt;br&gt;
+[2,3,&lt;strong&gt;1&lt;/strong&gt;,6,8 &amp;lt;-sorted | unsorted-&gt; ]&lt;br&gt;
+[2,&lt;strong&gt;1&lt;/strong&gt;,3,6,8 &amp;lt;-sorted | unsorted-&gt; ]&lt;br&gt;
+[&lt;strong&gt;1&lt;/strong&gt;,2,3,6,8 &amp;lt;-sorted | unsorted-&gt; ]&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;And we are left with our final result. &lt;br&gt;
+[1,2,3,6,8]&lt;/p&gt;
+
+&lt;p&gt;Pros: simple implementation, efficient for small data sets, constant space complexity as it sorts in place&lt;/p&gt;
+
+&lt;p&gt;Cons: impractical for sorting large arrays because its average time complexity is quadratic&lt;/p&gt;</content:encoded></item><item><title>Examples of slice</title><description>&lt;p&gt;The following are some examples that helped me to better understand slice. Remember that slice makes a copy of the original array, so the original array is not mutated.&lt;/p&gt;
+
+&lt;p&gt;The parameters are as follows: &lt;br&gt;
+&lt;code&gt;array.slice(startIndex, endIndex)&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;// Given an array of integers from 0 to 5
+&amp;gt; var arr&lt;/code&gt;&lt;/pre&gt;</description><link>http://localhost:2368/eax/</link><guid isPermaLink="false">2744347b-0fe5-4b1c-9889-c5a78e70883c</guid><dc:creator>Tiffany Huang</dc:creator><pubDate>Tue, 26 Jan 2016 04:28:50 GMT</pubDate><content:encoded>&lt;p&gt;The following are some examples that helped me to better understand slice. Remember that slice makes a copy of the original array, so the original array is not mutated.&lt;/p&gt;
+
+&lt;p&gt;The parameters are as follows: &lt;br&gt;
+&lt;code&gt;array.slice(startIndex, endIndex)&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;// Given an array of integers from 0 to 5
+&amp;gt; var arr = [0, 1, 2, 3, 4, 5]
+// Without the optional second parameter, a copy of an array is returned with the given index until the end of the array
+&amp;gt; arr.slice(1) // [1, 2, 3, 4, 5]
+// Again, the original array remains the same
+&amp;gt; arr // [0, 1, 2, 3, 4, 5]
+// If you include a second argument, it will slice from the first argument's index to the second argument up to but not including the element at that index
+&amp;gt; arr.slice(1, 3) // [1, 2]
+&amp;gt; arr // [0, 1, 2, 3, 4, 5]
+// Using a negative number as an integer will return the number of items from the end of the array
+&amp;gt; arr.slice(-1) // [5]
+&amp;gt; arr // [0, 1, 2, 3, 4, 5]
+&amp;gt; arr.slice(-3) // [3, 4, 5]
+&amp;gt; arr // [0, 1, 2, 3, 4, 5] 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;When writing functions, there is a way to use slice that is very useful. &lt;br&gt;
+&lt;code&gt;Array.prototype.slice.call()&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;When writing a function, arguments can be iterated over similar to an array and have a length property but are not considered and array, rather an array-like object. As you can see in the example below, we use &lt;code&gt;Array.prototype.slice.call(arguments)&lt;/code&gt; to create an array of the arguments. Now you can use the native array methods that would otherwise not have been available on the array-like arguments.  &lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;var example = function() {  
+  var argumentsArray = Array.prototype.slice.call(arguments);
+  console.log(argumentsArray);
+  return argumentsArray.pop();
+}
+
+&amp;gt; example(1, 2, 3) // [1, 2, 3]
+&amp;lt; 3  
+&lt;/code&gt;&lt;/pre&gt;</content:encoded></item><item><title>Examples of splice</title><description>&lt;p&gt;Let's see the splice method at work. It is important to remember, splice mutates the original array. The arguments are as follows: &lt;br&gt;
+&lt;code&gt;array.slice(startIndex, howManyToRemove, optionalItemToInsert)&lt;/code&gt; &lt;br&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;// Let's start with an array with integers 0-6
+&amp;gt; var arr = [0, 1, 2, 3, 4, 5]
+// How would you remove the first&lt;/code&gt;&lt;/pre&gt;</description><link>http://localhost:2368/examples/</link><guid isPermaLink="false">db725b30-685c-479a-b2a7-d26de201b505</guid><dc:creator>Tiffany Huang</dc:creator><pubDate>Tue, 26 Jan 2016 04:28:01 GMT</pubDate><content:encoded>&lt;p&gt;Let's see the splice method at work. It is important to remember, splice mutates the original array. The arguments are as follows: &lt;br&gt;
+&lt;code&gt;array.slice(startIndex, howManyToRemove, optionalItemToInsert)&lt;/code&gt; &lt;br&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;// Let's start with an array with integers 0-6
+&amp;gt; var arr = [0, 1, 2, 3, 4, 5]
+// How would you remove the first item in the array?
+&amp;gt; arr.splice(0, 1) // [0]
+// The splice item is returned and the original array has been mutated
+&amp;gt; arr // [1, 2, 3, 4, 5]
+// How would you remove more than one item in the middle of the array?
+&amp;gt; arr.splice(1, 2) // [2, 3]
+&amp;gt; arr // [1, 4, 5]
+// How would you insert items?
+&amp;gt; arr.splice(1, 1, 6, 7) // [4]
+&amp;gt; arr // [1, 6, 7, 5]
+// How do negative integers as parameters work?
+// It removes from the end of the array. If you had used -2, it would have removed the last two items
+&amp;gt; arr.splice(-1) // [5]
+&amp;gt; arr // [1, 6, 7]
+// If you only use one argument, it will remove items from the given parameter index to the end of the array.
+&amp;gt; arr.splice(1) // [6, 7]
+&amp;gt; arr // [1]
+&lt;/code&gt;&lt;/pre&gt;</content:encoded></item><item><title>Splice vs Slice</title><description>&lt;p&gt;Remembering when to use the &lt;code&gt;slice()&lt;/code&gt; vs &lt;code&gt;splice()&lt;/code&gt; can be confusing, probably because they are both array methods and they sound so much alike. There are some key differences:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;What is returned: &lt;br&gt;
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;slice: &lt;/strong&gt;returns a &lt;em&gt;new&lt;/em&gt; array with selected elements&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;splice: &lt;/strong&gt;adds or removes elements from an array and returns&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;/ol&gt;</description><link>http://localhost:2368/splice-v/</link><guid isPermaLink="false">263fccbd-5957-4a98-a007-f56e661d4b28</guid><dc:creator>Tiffany Huang</dc:creator><pubDate>Tue, 26 Jan 2016 04:27:35 GMT</pubDate><content:encoded>&lt;p&gt;Remembering when to use the &lt;code&gt;slice()&lt;/code&gt; vs &lt;code&gt;splice()&lt;/code&gt; can be confusing, probably because they are both array methods and they sound so much alike. There are some key differences:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;What is returned: &lt;br&gt;
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;slice: &lt;/strong&gt;returns a &lt;em&gt;new&lt;/em&gt; array with selected elements&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;splice: &lt;/strong&gt;adds or removes elements from an array and returns those removed elements&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Mutates original array: &lt;br&gt;
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;slice: &lt;/strong&gt;No. Slice creates a new array with the returned elements. The original array remains intact.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;splice: &lt;/strong&gt;Yes. Splice will change the original array.&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Arguments: &lt;br&gt;
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;slice: &lt;/strong&gt;There are 2 arguments, as you can see here: &lt;code&gt;array.slice(start, end)&lt;/code&gt;
+&lt;ul&gt;&lt;li&gt;'start' is a required integer that indicates the index where you'd like to begin the copy&lt;/li&gt;
+&lt;li&gt;'end' is an optional integer that indicates the end of a selection.&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;splice: &lt;/strong&gt; There are 2 required arguments for splice and optional additional parameters: &lt;code&gt;array.splice(start, howMany, option1, option2, option3...)&lt;/code&gt;
+&lt;ul&gt;&lt;li&gt;'start' indicates which index to ad or remove items&lt;/li&gt;
+&lt;li&gt;'howMany' determines how many items to remove. It is given a value of 0 if you want to select to the end of the array&lt;/li&gt;
+&lt;li&gt;optional additional items can be included in the arguments as elements to be added into the array&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Negative Integers: &lt;br&gt;
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;slice: &lt;/strong&gt;Use a negative integer as a parameter to select from the end of the array&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;splice: &lt;/strong&gt;If the start index is a negative number, it will specify the position from the end of the array.&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;I have listed the main differences between two widely used array methods. In a future post, we will go through some examples.&lt;/p&gt;</content:encoded></item><item><title>Bookmarks</title><description>&lt;p&gt;Are you a perpetual learner? I have compiled some of my favorite sites to keep professional students occupied.&lt;/p&gt;
+
+&lt;h6&gt;Learning / Tutorials&lt;/h6&gt;  
+
+&lt;p&gt;Just getting started or want to improve your skills? Here is a list of popular programming tutorial sites.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="https://www.codeschool.com/"&gt;CodeSchool&lt;/a&gt;&lt;br&gt;
+&lt;a href="https://www.codecademy.com/"&gt;CodeAcademy&lt;/a&gt;&lt;br&gt;
+&lt;a href="https://code.org/learn"&gt;Code.org&lt;/a&gt;&lt;br&gt;
+&lt;a href="http://www.freecodecamp.com/"&gt;FreeCodeCamp&lt;/a&gt;&lt;br&gt;
+&lt;a href="https://www.pluralsight.com/"&gt;PluralSight&lt;/a&gt;&lt;br&gt;
+&lt;a href="https://www.udemy.com/"&gt;Udemy&lt;/a&gt;&lt;br&gt;
+&lt;a href="https://www.udacity.com/"&gt;Udacity&lt;/a&gt;&lt;br&gt;
+&lt;a href="https://teamtreehouse.com/"&gt;Treehouse&lt;/a&gt;&lt;br&gt;
+&lt;a href="https://www.codeavengers.com/"&gt;CodeAvengers&lt;/a&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;h6&gt;Practice / Competition&lt;/h6&gt;</description><link>http://localhost:2368/bookmarks/</link><guid isPermaLink="false">0e2c4d07-835a-483e-95e8-916b2b68600a</guid><dc:creator>Tiffany Huang</dc:creator><pubDate>Tue, 26 Jan 2016 04:26:57 GMT</pubDate><content:encoded>&lt;p&gt;Are you a perpetual learner? I have compiled some of my favorite sites to keep professional students occupied.&lt;/p&gt;
+
+&lt;h6&gt;Learning / Tutorials&lt;/h6&gt;  
+
+&lt;p&gt;Just getting started or want to improve your skills? Here is a list of popular programming tutorial sites.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="https://www.codeschool.com/"&gt;CodeSchool&lt;/a&gt;&lt;br&gt;
+&lt;a href="https://www.codecademy.com/"&gt;CodeAcademy&lt;/a&gt;&lt;br&gt;
+&lt;a href="https://code.org/learn"&gt;Code.org&lt;/a&gt;&lt;br&gt;
+&lt;a href="http://www.freecodecamp.com/"&gt;FreeCodeCamp&lt;/a&gt;&lt;br&gt;
+&lt;a href="https://www.pluralsight.com/"&gt;PluralSight&lt;/a&gt;&lt;br&gt;
+&lt;a href="https://www.udemy.com/"&gt;Udemy&lt;/a&gt;&lt;br&gt;
+&lt;a href="https://www.udacity.com/"&gt;Udacity&lt;/a&gt;&lt;br&gt;
+&lt;a href="https://teamtreehouse.com/"&gt;Treehouse&lt;/a&gt;&lt;br&gt;
+&lt;a href="https://www.codeavengers.com/"&gt;CodeAvengers&lt;/a&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;h6&gt;Practice / Competition&lt;/h6&gt;  
+
+&lt;p&gt;The only way to get better at anything is to practice. The following links provide endless opportunity for challenging your problem solving skills.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="http://www.codewars.com/"&gt;Codewars&lt;/a&gt;&lt;br&gt;
+&lt;a href="https://coderbyte.com/"&gt;Coderbyte&lt;/a&gt;&lt;br&gt;
+&lt;a href="https://projecteuler.net/"&gt;Project Euler&lt;/a&gt;&lt;br&gt;
+&lt;a href="https://www.topcoder.com/"&gt;topcoder&lt;/a&gt;&lt;br&gt;
+&lt;a href="https://www.kaggle.com/"&gt;Kaggle&lt;/a&gt;&lt;br&gt;
+&lt;a href="https://codecombat.com/"&gt;CodeCombat&lt;/a&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;h6&gt;Open Courseware&lt;/h6&gt;  
+
+&lt;p&gt;If you are looking to deepen or broaden your knowledge, here are some places to find great online courses from some of the best learning institutions. Some useful courses include: Intro to Computer Science, Learning How to Learn, Algorithms: Design and Analysis, Data Science, and Machine Learning.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="https://www.coursera.org"&gt;Coursera&lt;/a&gt;&lt;br&gt;
+&lt;a href="https://www.edx.org/"&gt;edX&lt;/a&gt;&lt;br&gt;
+&lt;a href="http://ocw.mit.edu/"&gt;MIT OpenCoursware&lt;/a&gt;&lt;br&gt;&lt;/p&gt;</content:encoded></item><item><title>Welcome to Ghost</title><description>&lt;p&gt;You're live! Nice. We've put together a little post to introduce you to the Ghost editor and get you started. You can manage your content by signing in to the admin area at &lt;code&gt;&amp;lt;your blog URL&amp;gt;/ghost/&lt;/code&gt;. When you arrive, you can select this post from a list&lt;/p&gt;</description><link>http://localhost:2368/welcome-to-ghost/</link><guid isPermaLink="false">7c7f413b-3617-4487-902d-8905a888b23d</guid><category>Getting Started</category><dc:creator>Tiffany Huang</dc:creator><pubDate>Thu, 24 Dec 2015 19:43:25 GMT</pubDate><content:encoded>&lt;p&gt;You're live! Nice. We've put together a little post to introduce you to the Ghost editor and get you started. You can manage your content by signing in to the admin area at &lt;code&gt;&amp;lt;your blog URL&amp;gt;/ghost/&lt;/code&gt;. When you arrive, you can select this post from a list on the left and see a preview of it on the right. Click the little pencil icon at the top of the preview to edit this post and read the next section!&lt;/p&gt;
+
+&lt;h2 id="gettingstarted"&gt;Getting Started&lt;/h2&gt;
+
+&lt;p&gt;Ghost uses something called Markdown for writing. Essentially, it's a shorthand way to manage your post formatting as you write!&lt;/p&gt;
+
+&lt;p&gt;Writing in Markdown is really easy. In the left hand panel of Ghost, you simply write as you normally would. Where appropriate, you can use &lt;em&gt;shortcuts&lt;/em&gt; to &lt;strong&gt;style&lt;/strong&gt; your content. For example, a list:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Item number one&lt;/li&gt;
+&lt;li&gt;Item number two
+&lt;ul&gt;&lt;li&gt;A nested item&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;A final item&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;or with numbers!&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Remember to buy some milk  &lt;/li&gt;
+&lt;li&gt;Drink the milk  &lt;/li&gt;
+&lt;li&gt;Tweet that I remembered to buy the milk, and drank it&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id="links"&gt;Links&lt;/h3&gt;
+
+&lt;p&gt;Want to link to a source? No problem. If you paste in a URL, like &lt;a href="http://ghost.org"&gt;http://ghost.org&lt;/a&gt; - it'll automatically be linked up. But if you want to customise your anchor text, you can do that too! Here's a link to &lt;a href="http://ghost.org"&gt;the Ghost website&lt;/a&gt;. Neat.&lt;/p&gt;
+
+&lt;h3 id="whataboutimages"&gt;What about Images?&lt;/h3&gt;
+
+&lt;p&gt;Images work too! Already know the URL of the image you want to include in your article? Simply paste it in like this to make it show up:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="https://ghost.org/images/ghost.png" alt="The Ghost Logo"&gt;&lt;/p&gt;
+
+&lt;p&gt;Not sure which image you want to use yet? That's ok too. Leave yourself a descriptive placeholder and keep writing. Come back later and drag and drop the image in to upload:&lt;/p&gt;
+
+&lt;h3 id="quoting"&gt;Quoting&lt;/h3&gt;
+
+&lt;p&gt;Sometimes a link isn't enough, you want to quote someone on what they've said. Perhaps you've started using a new blogging platform and feel the sudden urge to share their slogan? A quote might be just the way to do it!&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Ghost - Just a blogging platform&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id="workingwithcode"&gt;Working with Code&lt;/h3&gt;
+
+&lt;p&gt;Got a streak of geek? We've got you covered there, too. You can write inline &lt;code&gt;&amp;lt;code&amp;gt;&lt;/code&gt; blocks really easily with back ticks. Want to show off something more comprehensive? 4 spaces of indentation gets you there.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;.awesome-thing {
+    display: block;
+    width: 100%;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id="readyforabreak"&gt;Ready for a Break?&lt;/h3&gt;
+
+&lt;p&gt;Throw 3 or more dashes down on any new line and you've got yourself a fancy new divider. Aw yeah.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h3 id="advancedusage"&gt;Advanced Usage&lt;/h3&gt;
+
+&lt;p&gt;There's one fantastic secret about Markdown. If you want, you can write plain old HTML and it'll still work! Very flexible.&lt;/p&gt;
+
+&lt;p&gt;&lt;input type="text" placeholder="I'm an input field!"&gt;&lt;/p&gt;
+
+&lt;p&gt;That should be enough to get you started. Have fun - and let us know what you think :)&lt;/p&gt;</content:encoded></item></channel></rss>

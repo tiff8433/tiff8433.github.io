@@ -1,0 +1,165 @@
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <title>Updating Ghost Blog Hosted on Github Pages</title>
+    <meta name="description" content="">
+
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  	<!--
+  	<meta name="twitter:card" value="summary">
+  	<meta name="twitter:site" content="@site-handle">
+  	<meta name="twitter:title" content="Updating Ghost Blog Hosted on Github Pages">
+  	<meta name="twitter:description" content="">
+  	<meta name="twitter:creator" content="@author-handle">
+  	<meta name="twitter:image" content="http://yoursite.com/featured-image.png">
+    -->
+  	<!--
+  	<meta property="og:title" content="Updating Ghost Blog Hosted on Github Pages" />
+  	<meta property="og:type" content="article" />
+  	<meta property="og:url" content="http://localhost:2368/updating-ghost-blog-hosted-on-github-pages/" />
+  	<meta property="og:description" content="" />
+  	<meta property="og:image" content="http://yoursite.com/featured-image.png" />
+  	<meta property="og:site_name" content="Site Name" />
+  	<meta property="fb:admins" content="Facebook numeric ID" />
+    -->
+    <link rel="stylesheet" type="text/css" href="../assets/css/style.css?v=3ba1096af9">
+
+    <link rel="canonical" href="index.html">
+    <meta name="referrer" content="origin">
+    
+    <meta property="og:site_name" content="Code Red">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Updating Ghost Blog Hosted on Github Pages">
+    <meta property="og:description" content="This post will describe the workflow need to write a blogpost in the ghost editor and deploy to github pages so that it is viewable at http://yourgithubusername.github.io. If you need help getting Github Pages to serve your...">
+    <meta property="og:url" content="http://localhost:2368/updating-ghost-blog-hosted-on-github-pages/">
+    <meta property="article:published_time" content="2016-01-30T20:30:20.639Z">
+    <meta property="article:modified_time" content="2016-01-30T20:37:13.763Z">
+    
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Updating Ghost Blog Hosted on Github Pages">
+    <meta name="twitter:description" content="This post will describe the workflow need to write a blogpost in the ghost editor and deploy to github pages so that it is viewable at http://yourgithubusername.github.io. If you need help getting Github Pages to serve your...">
+    <meta name="twitter:url" content="http://localhost:2368/updating-ghost-blog-hosted-on-github-pages/">
+    
+    <script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "publisher": "Code Red",
+    "author": {
+        "@type": "Person",
+        "name": "Tiffany Huang",
+        "url": "http://localhost:2368/author/tiffany",
+        "sameAs": null,
+        "description": null
+    },
+    "headline": "Updating Ghost Blog Hosted on Github Pages",
+    "url": "http://localhost:2368/updating-ghost-blog-hosted-on-github-pages/",
+    "datePublished": "2016-01-30T20:30:20.639Z",
+    "dateModified": "2016-01-30T20:37:13.763Z",
+    "description": "This post will describe the workflow need to write a blogpost in the ghost editor and deploy to github pages so that it is viewable at http://yourgithubusername.github.io. If you need help getting Github Pages to serve your..."
+}
+    </script>
+
+    <meta name="generator" content="Ghost 0.7">
+    <link rel="alternate" type="application/rss+xml" title="Code Red" href="../rss/index.html">
+</head>
+<body class="post-template">
+
+	
+
+<header id="site-head" style="background-image: url(../content/images/2016/01/sunset.jpg)">
+  <div id="site-head-content" class="inner">
+    
+    <h1 class="blog-title"><a href="../">Code Red</a></h1>
+    <h2 class="blog-description"></h2>
+    <p class="social-links">
+	<a href="http://instagram.com/username"><i class="fa fa-instagram"></i></a>
+	<a href="https://twitter.com/username"><i class="fa fa-twitter"></i></a>
+	<a href="https://github.com/username"><i class="fa fa-github"></i></a>
+	<a href="https://alpha.app.net/username"><i class="fa fa-adn"></i></a>
+	<a href="https://google.com/+username?rel=author"><i class="fa fa-google-plus"></i></a>
+	<a href="../rss/index.rss"><i class="fa fa-rss"></i></a>
+</p>  </div>
+</header>
+
+<main class="content" role="main">
+  <article class="post">
+      <h1 class="post-title">Updating Ghost Blog Hosted on Github Pages</h1>
+      <span class="post-meta"><i class="fa fa-calendar"></i> <time datetime="2016-01-30">30 Jan 2016</time></span>
+      <section class="post-content">
+        <p>This post will describe the workflow need to write a blogpost in the ghost editor and deploy to github pages so that it is viewable at <a href="http://yourgithubusername.github.io">http://yourgithubusername.github.io</a>.</p>
+
+<p>If you need help getting Github Pages to serve your Ghost blog, the following links, that utilize buster, are helpful: <br>
+1. <a href="http://ledtechnica.com/free-ghost-hosting-on-github-pages/">http://ledtechnica.com/free-ghost-hosting-on-github-pages/</a> <br>
+2. <a href="http://briank.im/i-see-ghosts/">http://briank.im/i-see-ghosts/</a> <br>
+3. <a href="http://blog.sunnyg.io/2015/09/24/ghost-with-github/">http://blog.sunnyg.io/2015/09/24/ghost-with-github/</a></p>
+
+<p>Now that you have your ghost-github-buster blog set up with, how do you create and deploy a new post?</p>
+
+<ol>
+<li>open your terminal and cd into your ghost folder  </li>
+<li><code>npm start</code> to start the server  </li>
+<li>open you browser and go to <code>localhost:&lt;port number&gt;/ghost</code>  </li>
+<li>sign in, if prompted  </li>
+<li>the ghost editor should open up, click on 'New Post'  </li>
+<li>start writing  </li>
+<li>when you are finished, go to the 'SAVE DRAFT' dropdown menu and click on 'Publish Now'  </li>
+<li>cd into your ghost folder that <em>contains</em> the 'static' folder, not into the 'static' folder  </li>
+<li>type <code>buster deploy</code> and your pages will be added, committed and pushed to github  </li>
+<li>your blog should be updated shortly</li>
+</ol>
+
+<p>Until you have gone through the workflow a couple of times, it may not be very intuitive on how to update your post. Hopefully the above steps will be a quick reminder, until it becomes second nature.</p>
+      </section>
+          <section class="author">
+            <h5>by <a href="../author/tiffany/">Tiffany Huang</a></h5>
+            <p></p>
+          </section>
+      <section class="post-navigation">
+        <div class="previous-post">
+          « <a href="../inser/">Insertion Sort</a>
+        </div>
+      </section>
+      <footer class="post-footer">
+        <section class="share">
+          <h4>Share this post</h4>
+          <a href="http://twitter.com/share?text=Updating%20Ghost%20Blog%20Hosted%20on%20Github%20Pages&amp;url=http://localhost:2368/updating-ghost-blog-hosted-on-github-pages/" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+            <i class="fa fa-twitter"></i>
+          </a>
+          <a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:2368/updating-ghost-blog-hosted-on-github-pages/" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+            <i class="fa fa-facebook"></i>
+          </a>
+          <a href="https://plus.google.com/share?url=http://localhost:2368/updating-ghost-blog-hosted-on-github-pages/" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+            <i class="fa fa-google-plus"></i>
+          </a>
+        </section>
+        <section class="save-for-later">
+          <h4>Or read it later, using</h4>
+          <a href="http://www.instapaper.com/hello2?url=http://localhost:2368/updating-ghost-blog-hosted-on-github-pages/&amp;title=Updating%20Ghost%20Blog%20Hosted%20on%20Github%20Pages">Instapaper</a>
+        </section>
+        <section class="go-back">
+          <h4>Or just</h4>
+          <a href="../">go back to the index page</a>
+        </section>
+      </footer>
+  </article>
+</main>
+
+
+	<footer class="site-footer">
+	    <div class="inner">
+	         <section class="copyright">All content copyright <a href="../">Code Red</a> © 2016 • All rights reserved.</section>
+	         <section class="poweredby">Proudly published from Slussfors, Lapland, Sweden with <a href="http://ghost.org/">Ghost</a> on <a href="http://digitalocean.com/">Digital Ocean</a>.</section>
+	    	 <section class="theme">Using the <a href="https://github.com/lacke/Orre-Theme-for-Ghost" class="github"><span class="tooltip">Get it on GitHub!</span>Orre theme</a> by <a href="http://laketa.com/">Stefan Laketa</a>.</section>
+		</div>
+	</footer>
+
+    
+
+    <script type="text/javascript" src="../assets/js/index.js"></script>
+</body>
